@@ -1,2 +1,2 @@
 # Auto-Car
-My first web project, Used HMTL,CSS and JavaScript
+Auto-car is a simple website through wich you can find out accurate details about the most cars
