@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="Slideshow.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="main.css">
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script src="autocar.js"></script>
+
+  <script>
+    var an = "admin"
+    var ap = "123"
+    localStorage.setItem("user_name Admin", an);
+    localStorage.setItem("user_password Admin", ap);
+    localStorage.setItem("user_codeP Admin", (an + ap));
+
+
+
+    // function ChangeBGcolor() {
+    //   document.bgColor = document.getElementById("pagecolor").value;
+
+    // }
+
+    function admin_check() {
+      if (localStorage.getItem("isAdmin") == "true") {
+        // document.getElementById("pagecolor").classList.remove("hide");
+        // document.getElementById("chngclrBtn").classList.remove("hide");
+        document.getElementById("admin_id").href = "admin_page.html";
+
+      } else
+        alert("sorry, you are not admin");
+    }
+
+    function set_colors() {
+      document.getElementById("body").style.backgroundColor = localStorage.getItem("backround_color");
+      document.getElementById("header_id").style.backgroundColor = localStorage.getItem("header_color");
+      document.getElementById("foot").style.backgroundColor = localStorage.getItem("footer_color");
+
+    }
+
+    function isadmin() {
+      if (localStorage.getItem("isAdmin") == "false") {
+        document.getElementById("admin_id").classList.add("hide");
+      }
+      localStorage.setItem("i", "0");
+
+    }
+
+    function set_slideshow() {
+      // var ss1 = document.getElementById("image1");
+      var ss2 = document.getElementById("image2");
+      var ss3 = document.getElementById("image3");
+      var ss4 = document.getElementById("image4");
+      // var ss5 = document.getElementById("image5");
+      // ss1.src = localStorage.getItem("slideshow_1");
+      ss2.src = localStorage.getItem("slideshow_2");
+      ss3.src = localStorage.getItem("slideshow_3");
+      ss4.src = localStorage.getItem("slideshow_4");
+      // ss5.src = localStorage.getItem("slideshow_5");
+    }
+  </script>
+
+  <title>Auto car</title>
+</head>
+
+<!-- default_slideshow(), firstload(), -->
+
+<body id="body" onload="default_slideshow(), firstload(), set_colors(), isadmin(), set_slideshow()">
+
+
+  <!-- yousef mostafa -->
+  <header class="top" id="header_id">
+    <span>
+      <a href="" class="logo">AutOCAR</a>
+    </span>
+    <nav>
+      <a href="#slidebar"><strong>Home</strong></a>
+      <a href="logout.html"><strong>Logout</strong></a>
+      <a href="#foot"><strong>Contact</strong></a>
+      <a id="admin_id" class=" " onclick="admin_check()"><strong> Admin Page</strong></a>
+    </nav>
+  </header>
+
+  <!-- yousef wagih -->
+  <div class="container" id="slidebar">
+    <!-- Slider main container -->
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        
+        <div class="swiper-slide"><img id="image2" src=" "></div>
+        <div class="swiper-slide"><img id="image3" src=" "></div>
+        <div class="swiper-slide"><img id="image4" src=" "></div>
+        <div class="swiper-slide"><img id="image5" src="images/lazy.jpg"></div>
+
+
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+    </div>
+  </div>
+
+
+  <span class="search">Search by type</span>
+
+
+  <!-- mohamed fahed -->
+  <div class="container">
+
+    <div class="card">
+      <div class="card-image car-1"></div>
+      <!-- <h2></h2> -->
+      <!-- <p>If you're looking to go electric and never visit a gas pump again, one of these cars could be for you. Start
+        your search with this list of the 10 best electric cars for 2022 shoppers based on CarMax sales data from July
+        1, 2021, through December 31, 2021.</p> -->
+      <a href="trucks.html">SEE MORE</a>
+    </div>
+    <div class="card">
+      <div class="card-image car-2"></div>
+      <!-- <h2> Sports Cars</h2> -->
+      <!-- <p>Ignite your senses behind the wheel of a sports car. To find the model with the performance and style you
+        crave, check out this list of the 10 best used sports cars for 2022 shoppers, based on CarMax vehicle and sales
+        data from June 1, 2021, through November 30, 2021.</p> -->
+      <a href="electric.html">SEE MORE</a>
+    </div>
+    <div class="card">
+      <div class="card-image car-3"></div>
+      <!-- <h2>Van Cars</h2> -->
+      <!-- <p>Ignite your senses behind the wheel of a sports car. To find the model with the performance and style you
+        crave, check out this list of the 10 best used sports cars for 2022 shoppers, based on CarMax vehicle and sales
+        data from June 1, 2021, through November 30, 2021.</p> -->
+      <a href="convertibles.html">SEE MORE</a>
+    </div>
+    <div class="card">
+      <div class="card-image car-4"></div>
+      <!-- <h2>BMW Cars</h2> -->
+      <!-- <p>Ignite your senses behind the wheel of a sports car. To find the model with the performance and style you
+        crave, check out this list of the 10 best used sports cars for 2022 shoppers, based on CarMax vehicle and sales
+        data from June 1, 2021, through November 30, 2021.</p> -->
+      <a href="vans.html">SEE MORE</a>
+    </div>
+    <div class="card">
+      <div class="card-image car-5"></div>
+      <!-- <h2>mercedes Car</h2> -->
+      <!-- <p>Ignite your senses behind the wheel of a sports car. To find the model with the performance and style you
+        crave, check out this list of the 10 best used sports cars for 2022 shoppers, based on CarMax vehicle and sales
+        data from June 1, 2021, through November 30, 2021.</p> -->
+      <a href="crossovers.html">SEE MORE</a>
+    </div>
+  </div>
+
+
+  <!-- yousef abdelhamead -->
+
+  <footer id="foot">
+    <div class="header">
+      <div class="carmax-icons">
+
+        <div class="carmax"><span style="font-size: 22px;">AutOCAR</span></span></div>
+        <div class="line">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="icon">
+          <i class="fab fa-facebook-f"></i>
+        </div>
+        <div class="icon">
+          <i class="fab fa-twitter"></i>
+        </div>
+      </div>
+
+      <article>
+        <input type="checkbox" style="display:none ;" id="select">
+
+
+
+        <div class="center">
+          <h6>Your store for 66204:</h6>
+          <h1>Kansas City</h1>
+          <a href="#" class="view">View more store details</a>
+          <p class="details">6801 East Frontage Road
+            Merriam, KS 66204
+          </p>
+          <a href="" class="phone">(913) 384–6697</a>
+          <span>Currently Open</span>
+          <span class="store-status-hours">Today: 12 PM - 7 PM
+          </span>
+          <a href="" class="payment">SEE CARS AT THIS STORE</a>
+          <label for="" class="change">Change your store</label>
+          <div>
+            <input type="text" placeholder="Enter ZIP or State">
+            <label for=""><i class="fas fa-search"></i></label>
+          </div>
+        </div>
+
+
+
+        <label for="select" href="#">
+
+          <i class='fas fa-map-marker-alt' style='font-size:20px;color:white'></i>
+          <p>Kansas City</p>
+          <i class='fas fa-caret-down' style='font-size:10px;color:white'></i>
+        </label>
+        <a href="#">
+          <i class="fa fa-phone"
+            style="font-size: 20px; transform:rotateY(180deg);margin-right: 10px; margin-top: -2px;"></i>
+          <span>(913) 384-6697</span>
+        </a>
+      </article>
+    </div>
+    <hr>
+    <div class="menue">
+      <ul>
+        <li>Shop</li>
+        <li><a href="">Browse By Category</a></li>
+        <li><a href="">View All Inventory</a></li>
+        <li><a href="">Find a Store</a></li>
+      </ul>
+      <ul>
+        <li>Sell/Trade</li>
+        <li><a href="">Get an Online Offer</a></li>
+      </ul>
+      <ul>
+        <li>Finance</li>
+        <li><a href="">How it Works</a></li>
+        <!-- <li><a href="">CarMax Auto Finance</a></li> -->
+
+      </ul>
+      <ul>
+        <li>About</li>
+        <!-- <li><a href="">About CarMax</a></li> -->
+        <li><a href="">Contact Us</a></li>
+        <li><a href="">Social Responsibility</a></li>
+        <!-- <li><a href="">CarMax Foundation</a></li> -->
+        <li><a href="">Media Center</a></li>
+        <li><a href="">Investor Relations</a></li>
+      </ul>
+      <ul>
+        <li>Careers</li>
+        <li><a href="">Search Jobs</a></li>
+      </ul>
+      <ul>
+        <li>More</li>
+        <li><a href="">Service & Repairs</a></li>
+        <li><a href="">FAQ & Support</a></li>
+        <li><a href="">Research Articles</a></li>
+        <!-- <li><a href="">Warranties & MaxCare®</a></li> -->
+      </ul>
+    </div>
+
+    <section>
+      <div class="other"><a href="">Privacy Policy</a></div>
+      <div class="other"><a href="">Do Not Sell My Information</a></div>
+      <div class="other"><a href="">Financial Privacy Policy</a></div>
+      <div class="other"><a href="">Interest-Based Ads</a></div>
+      <div class="other"><a href="">Terms of Use</a></div>
+      <div class="other"><a href="">Responsible Disclosure</a></div>
+      <!-- <div class="other"><a href="">CarMax Recall Policy</a></div> -->
+      <div class="other"><a href="">CA Supply Chain Transparency</a></div>
+      <div class="other"><a href="">Accessibility</a></div>
+      <a href="" class="fedback">Feedback</a>
+    </section>
+    <main>
+      <p>Copyright © 2022 AutoCAR Enterprise Services, LLC</p>
+    </main>
+  </footer>
+
+
+
+
+  <!-- yousef wagih -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      // Optional parameters
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      loop: true,
+
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+  <article style="text-align: center; display: flex;justify-content: center; align-items: center;padding: 20px;">© 2022
+    All Rights Reserved By Ain Shams University</article>
+
+</body>
+
+</html>

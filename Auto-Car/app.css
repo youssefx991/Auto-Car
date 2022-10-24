@@ -1,0 +1,87 @@
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1000px 0px 200px opx;
+    /* height: 100vh; */
+
+    /* warp->it organize it self(very nice for fone)    nowrap->all adjsent(no for phone) */
+}
+
+.card {
+    background-color: #f0f1f2;
+    width: 350px;
+    /* height: 400px; */
+    margin: 40px 40px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 0 0 20px 0;
+    height: 300px;
+    /* cursor: none; */
+    transition: all 1s ease;
+}
+
+.card-image {
+    background-color: #f0f1f2;
+    height: 160px;
+    width: 350px;
+    margin-bottom: 10px;
+    background-size: cover;
+    border-radius: 15px 15px 0 0;
+
+}
+
+.car-1 {
+    background-image: url(./mohmed-fahed-images/Screenshot\ 2022-08-14\ 231432.png);
+}
+
+.car-2 {
+    background-image: url(./mohmed-fahed-images/Screenshot\ 2022-08-14\ 231726.png);
+}
+
+.car-3 {
+    background-image: url(./mohmed-fahed-images/Screenshot\ 2022-08-14\ 231555.png);
+}
+
+.car-4 {
+    background-image: url(./mohmed-fahed-images/Screenshot\ 2022-08-14\ 231659.png);
+}
+
+.car-5 {
+    background-image: url(./mohmed-fahed-images/Screenshot\ 2022-08-14\ 231532.png);
+}
+
+/* .card p {
+    padding: 10px;
+    text-align: center;
+} */
+
+/* .card h2 {
+    text-align: center;
+} */
+
+.card a {
+    background-color: rgb(78, 108, 162);
+    color: white;
+    padding: 15px 20px;
+    display: block;
+    text-align: center;
+    margin: 40px 50px 20px;
+    text-decoration: none;
+    border-radius: 25PX;
+    transition: 1s;
+}
+
+.card a:hover {
+    opacity: 0.65;
+    cursor: pointer;
+}
+
+.card:hover {
+    /* background-color: rgb(227, 234, 234); */
+    color: rgb(30, 31, 31);
+    /* cursor: pointer; */
+    transform: scale(1.12);
+    transition: all 1s ease;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+}

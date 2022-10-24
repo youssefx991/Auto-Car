@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <link rel="stylesheet" href="trucks.css">
+  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script src="autocar.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+    .modal-open {
+      background-color: #253e4f;
+      margin-top: 30px;
+      outline: none;
+      border: none;
+      font-size: 22px;
+      color: #fefefe;
+      padding: 10px;
+      border-radius: 15px;
+      transition: 0.4s;
+      cursor: pointer;
+    }
+
+    .modal-open:hover {
+      opacity: 0.8;
+      color: rgb(255, 255, 255);
+      box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.4);
+      transform: scale(1.2);
+
+    }
+
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 2;
+      display: none;
+      animation: modal-open .5s;
+    }
+
+    .modal-content {
+      background: #fff;
+      margin: 100px;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0px, 24px;
+      border-radius: 4px;
+      z-index: 4;
+    }
+
+    .modal-header {
+      font-weight: 500, 100;
+      padding: 10px 0;
+      font-size: 20px;
+    }
+
+    .modal-header .modal-close {
+      float: right;
+      font-size: 20px;
+      background: #efefef;
+      border: 0;
+      outline: 0;
+      padding: 5px 0px;
+      border-radius: 50%;
+
+    }
+
+    .moda-body {
+      color: #7b7b7b;
+      padding: 15px 0;
+
+    }
+
+    .modal-footer {
+      padding: 15px 0;
+
+    }
+
+    .modal-footer .modal-close {
+      padding: 8px 16px;
+      font-size: 14px;
+      border: none;
+      outline: none;
+      border-radius: 4px;
+      color: #1a73e8;
+
+
+    }
+
+    @keyframes modal-open {
+
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+  </style>
+</head>
+
+<body id="body" onload="set_colors()">
+  <header id="header_id">
+    <a href="" class="logo">AutOCAR</a>
+    <nav>
+      <a href="header.html"><strong>Home</strong></a>
+      <a href="logout.html"><strong>Logout</strong></a>
+      <a href="#foot"><strong>Contact</strong></a>
+
+    </nav>
+  </header>
+
+  <section class="types">
+    <div class="images">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://img2.carmax.com/img/vehicles/22876164/1_cleaned.jpg?width=800" alt="Avatar"
+            style="width:300px;height:300px;  border-radius: 20px;">
+        </div>
+        <div class="details">
+          <div>
+            <a class="carname" href="#">2022 Chevrolet</a>
+          </div>
+          <div>
+            <a class="carname" href="#">Silverabo 1500 Custom</a>
+          </div>
+          <p class="price">$39,998* • 24K mi</p>
+          <p class="kilo">$546/month</p>
+          <!-- <p class="Mo">Free Shipping from CarMax Independence, MO</p> -->
+          <button class="modal-open" data-modal="modal1">More Details</button>
+          <!-- <button class="modelBoxBtn" id="1" onclick="callmodal('1', 'Modal_1')">more details</button> -->
+        </div>
+      </div>
+    </div>
+
+
+    <div class="images">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://img2.carmax.com/img/vehicles/22688048/1_cleaned.jpg?width=800" alt="Avatar"
+            style="width:300px;height:300px;   border-radius: 20px;">
+        </div>
+        <div class="details">
+          <div>
+            <a class="carname" href="">2019 Nissan</a>
+          </div>
+          <div>
+            <a class="carname" href="">Titan XD PRO-4X</a>
+          </div>
+          <p class="price">$51,998* • 34K mi</p>
+          <p class="kilo">$1,005/month</p>
+          <p class="Mo">⁠Appointment only at CarMax Kansas City, KS</p>
+          <button class="modal-open" data-modal="modal2">More Details</button>
+          <!-- <button class="modelBoxBtn" id="2" onclick="callmodal('2', 'Modal_2')">more details</button> -->
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="images">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://img2.carmax.com/img/vehicles/22877460/1_cleaned.jpg?width=800" alt="Avatar"
+            style="width:300px;height:300px;  border-radius: 20px;">
+        </div>
+        <div class="details">
+          <div>
+            <a class="carname" href="">2020 Ram</a>
+          </div>
+          <div>
+            <a class="carname" href="">1500 Classic Warlock</a>
+          </div>
+          <p class="price"> $38,998*•11K mi</p>
+          <p class="kilo">$744/month
+
+          </p>
+          <p class="Mo">⁠Free Shipping from CarMax Independence, MO</p>
+          <button class="modal-open" data-modal="modal3">More Details</button>
+          <!-- <button class="modelBoxBtn" id="3" onclick="callmodal('3', 'Modal_3')">more details</button> -->
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="images">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://img2.carmax.com/img/vehicles/22687627/1_cleaned.jpg?width=800" alt="Avatar"
+            style="width:300px;height:300px;  border-radius: 20px;">
+        </div>
+        <div class="details">
+          <div>
+            <a class="carname" href="">2014 Ford</a>
+          </div>
+          <div>
+            <a class="carname" href="">F150 Lariat</a>
+          </div>
+          <p class="price">$29,998*•104K mi</p>
+          <p class="kilo">$564/month</p>
+          <p class="Mo">⁠Available at your store CarMax Kansas City, KS</p>
+          <button class="modal-open" data-modal="modal4">More Details</button>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="images">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://img2.carmax.com/img/vehicles/23008906/1_cleaned.jpg?width=800" alt="Avatar"
+            style="width:300px;height:300px;  border-radius: 20px;">
+        </div>
+        <div class="details">
+          <div>
+            <a class="carname" href=""> 2015 Chevrolet</a>
+          </div>
+          <div>
+            <a class="carname" href=""> Titan SV</a>
+          </div>
+          <p class="price"> $23,998*•102K mi</p>
+          <p class="kilo">$447/month</p>
+          <p class="Mo">⁠$799 Shipping from CarMax Phoenix-</p>
+          <button class="modal-open" data-modal="modal5">More Details</button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- modals -->
+    <div class="modal" id="modal1">
+      <div class="modal-content">
+        <div class="modal-header">Car details<button class="icon modal-close"><i class="material-icons">close</i>
+          </button></div>
+        <div class="modal-body">
+          <img src="https://img2.carmax.com/img/vehicles/22876164/1_cleaned.jpg?width=800">
+          <img src="https://img2.carmax.com/img/vehicles/22876164/12.jpg?width=800&ratio=4/3">
+          <img src="https://img2.carmax.com/img/vehicles/22876164/10.jpg?width=800&ratio=4/3">
+          <img src="https://img2.carmax.com/img/vehicles/22876164/6.jpg?width=800&ratio=4/3">
+          <img src="https://img2.carmax.com/img/vehicles/22876164/20.jpg?width=1600&ratio=source">
+          <p>price:111$</p>
+          <p>traveled kilometeres:30000km</p>
+        </div>
+        <div class="modal-footer"><button class="link modal-close">Close Modal</button></div>
+      </div>
+    </div>
+
+
+    <div class="modal" id="modal2">
+      <div class="modal-content">
+        <div class="modal-header">Car details<button class="icon modal-close"><i class="material-icons">close</i>
+          </button></div>
+        <img src="https://img2.carmax.com/img/vehicles/22688048/12.jpg?width=800&ratio=4/3">
+        <img src="https://img2.carmax.com/img/vehicles/22688048/10.jpg?width=800&ratio=4/3">
+        <img src="">
+        <img src="https://img2.carmax.com/img/vehicles/22688048/6.jpg?width=800&ratio=4/3">
+        <img src="">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo corrupti esse harum dignissimos officiis
+          iure nihil dolores. Possimus cumque ratione veritatis quos porro illo aliquam iusto, minus doloremque est cum.
+        </p>
+        <!-- <div class="modal-body">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, soluta.</div> -->
+        <div class="modal-footer"><button class="link modal-close">Close Modal</button></div>
+      </div>
+    </div>
+
+
+
+    <div class="modal" id="modal3">
+      <div class="modal-content">
+        <div class="modal-header">Car details<button class="icon modal-close"><i class="material-icons">close</i>
+          </button></div>
+        <img src="https://img2.carmax.com/img/vehicles/22877460/1_cleaned.jpg?width=800">
+        <img src="https://img2.carmax.com/img/vehicles/22877460/12.jpg?width=800&ratio=4/3">
+        <img src="https://img2.carmax.com/img/vehicles/22877460/3.jpg?width=800&ratio=4/3">
+        <img src="https://img2.carmax.com/img/vehicles/22877460/10.jpg?width=800&ratio=4/3">
+        <img src="https://img2.carmax.com/img/vehicles/22877460/6.jpg?width=800&ratio=4/3">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo corrupti esse harum dignissimos officiis
+          iure nihil dolores. Possimus cumque ratione veritatis quos porro illo aliquam iusto, minus doloremque est cum.
+        </p>
+        <div class="modal-body">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, soluta.</div>
+        <div class="modal-footer"><button class="link modal-close">Close Modal</button></div>
+      </div>
+    </div>
+
+
+    <div class="modal" id="modal4">
+      <div class="modal-content">
+        <div class="modal-header">Car details<button class="icon modal-close"><i class="material-icons">close</i>
+          </button></div>
+        <img src="">
+        <img src="">
+        <img src="">
+        <img src="">
+        <img src="">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo corrupti esse harum dignissimos officiis
+          iure nihil dolores. Possimus cumque ratione veritatis quos porro illo aliquam iusto, minus doloremque est cum.
+        </p>
+        <div class="modal-body">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, soluta.</div>
+        <div class="modal-footer"><button class="link modal-close">Close Modal</button></div>
+      </div>
+    </div>
+    <!-- 
+    <div id="Modal_4" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <img src="">
+        <img src="">
+        <img src="">
+        <img src="">
+        <img src="">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo corrupti esse harum dignissimos officiis
+          iure nihil dolores. Possimus cumque ratione veritatis quos porro illo aliquam iusto, minus doloremque est cum.
+        </p>
+      </div>
+    </div> -->
+
+    <div class="modal" id="modal5">
+      <div class="modal-content">
+        <div class="modal-header">Car details<button class="icon modal-close"><i class="material-icons">close</i>
+          </button></div>
+        <img src="">
+        <img src="">
+        <img src="">
+        <img src="">
+        <img src="">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo corrupti esse harum dignissimos officiis
+          iure nihil dolores. Possimus cumque ratione veritatis quos porro illo aliquam iusto, minus doloremque est cum.
+        </p>
+        <div class="modal-body">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, soluta.</div>
+        <div class="modal-footer"><button class="link modal-close">Close Modal</button></div>
+      </div>
+    </div>
+
+    <!-- <div id="Modal_5" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <img src="">
+        <img src="">
+        <img src="">
+        <img src="">
+        <img src="">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo corrupti esse harum dignissimos officiis
+          iure nihil dolores. Possimus cumque ratione veritatis quos porro illo aliquam iusto, minus doloremque est cum.
+        </p>
+      </div>
+    </div> -->
+
+
+  </section>
+
+  <footer id="foot">
+    <div class="header">
+      <div class="carmax-icons">
+
+        <div class="carmax"><span style="font-size: 22px;">AutOCAR</span></span></div>
+        <div class="line">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="icon">
+          <i class="fab fa-facebook-f"></i>
+        </div>
+        <div class="icon">
+          <i class="fab fa-twitter"></i>
+        </div>
+      </div>
+
+      <article>
+        <input type="checkbox" style="display:none ;" id="select">
+
+
+
+        <div class="center">
+          <h6>Your store for 66204:</h6>
+          <h1>Kansas City</h1>
+          <a href="#" class="view">View more store details</a>
+          <p class="details">6801 East Frontage Road
+            Merriam, KS 66204
+          </p>
+          <a href="" class="phone">(913) 384–6697</a>
+          <span>Currently Open</span>
+          <span class="store-status-hours">Today: 12 PM - 7 PM
+          </span>
+          <a href="" class="payment">SEE CARS AT THIS STORE</a>
+          <label for="" class="change">Change your store</label>
+          <div>
+            <input type="text" placeholder="Enter ZIP or State">
+            <label for=""><i class="fas fa-search"></i></label>
+          </div>
+        </div>
+
+
+
+        <label for="select" href="#">
+
+          <i class='fas fa-map-marker-alt' style='font-size:20px;color:white'></i>
+          <p>Kansas City</p>
+          <i class='fas fa-caret-down' style='font-size:10px;color:white'></i>
+        </label>
+        <a href="#">
+          <i class="fa fa-phone"
+            style="font-size: 20px; transform:rotateY(180deg);margin-right: 10px; margin-top: -2px;"></i>
+          <span>(913) 384-6697</span>
+        </a>
+      </article>
+    </div>
+    <hr>
+    <div class="menue">
+      <ul>
+        <li>Shop</li>
+        <li><a href="">Browse By Category</a></li>
+        <li><a href="">View All Inventory</a></li>
+        <li><a href="">Find a Store</a></li>
+      </ul>
+      <ul>
+        <li>Sell/Trade</li>
+        <li><a href="">Get an Online Offer</a></li>
+      </ul>
+      <ul>
+        <li>Finance</li>
+        <li><a href="">How it Works</a></li>
+
+
+      </ul>
+      <ul>
+        <li>About</li>
+        <li><a href="">About CarMax</a></li>
+        <li><a href="">Contact Us</a></li>
+        <li><a href="">Social Responsibility</a></li>
+        <li><a href="">Media Center</a></li>
+        <li><a href="">Investor Relations</a></li>
+      </ul>
+      <ul>
+        <li>Careers</li>
+        <li><a href="">Search Jobs</a></li>
+      </ul>
+      <ul>
+        <li>More</li>
+        <li><a href="">Service & Repairs</a></li>
+        <li><a href="">FAQ & Support</a></li>
+        <li><a href="">Research Articles</a></li>
+        <li><a href="">Warranties & MaxCare®</a></li>
+      </ul>
+    </div>
+
+    <section>
+      <div class="other"><a href="">Privacy Policy</a></div>
+      <div class="other"><a href="">Do Not Sell My Information</a></div>
+      <div class="other"><a href="">Financial Privacy Policy</a></div>
+      <div class="other"><a href="">Interest-Based Ads</a></div>
+      <div class="other"><a href="">Terms of Use</a></div>
+      <div class="other"><a href="">Responsible Disclosure</a></div>
+
+      <div class="other"><a href="">CA Supply Chain Transparency</a></div>
+      <div class="other"><a href="">Accessibility</a></div>
+      <a href="" class="fedback">Feedback</a>
+    </section>
+    <main>
+      <p>Copyright © 2022 AutoCAR Enterprise Services, LLC</p>
+    </main>
+  </footer>
+  <article style="text-align: center; display: flex;justify-content: center; align-items: center;padding: 20px;">© 2022
+    All Rights Reserved By Ain Shams University</article>
+
+
+  <script>
+
+    function set_colors() {
+      document.getElementById("body").style.backgroundColor = localStorage.getItem("backround_color");
+      document.getElementById("header_id").style.backgroundColor = localStorage.getItem("header_color");
+      document.getElementById("foot").style.backgroundColor = localStorage.getItem("footer_color");
+
+    }
+    //getting modal open buttons
+
+    var modalBtns = document.querySelectorAll(".modal-open");
+
+    modalBtns.forEach(function (btn) {
+      btn.onclick = function () {
+        var modal = btn.getAttribute('data-modal');
+        document.getElementById(modal).style.display = "block";
+      };
+    });
+
+
+    var closeBtns = document.querySelectorAll('.modal-close');
+
+    closeBtns.forEach(function (btn) {
+      btn.onclick = function () {
+        var modal = (btn.closest('.modal').style.display = 'none');
+      }
+    });
+
+    window.onclick = function (e) {
+      if (e.target.className === "modal") {
+        e.target.style.display = "none";
+      }
+
+    };
+  </script>
+</body>
+
+</html>

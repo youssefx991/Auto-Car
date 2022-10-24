@@ -1,0 +1,74 @@
+.select {
+  font-size: 19px;
+  padding: 5px 12px;
+  color: #333333;
+  background-color: #eeeeee;
+  border: 1px solid #dddddd;
+  cursor: pointer;
+  border-radius: 10px;
+
+}
+
+legend {
+  font-size: 26px;
+  font-weight: 900px;
+  color: #fffdfd;
+  background-color: #537df0;
+  padding: 10px;
+  border-radius: 15px;
+
+}
+
+fieldset {
+  border: 3px solid #537df0;
+  border-radius: 20px;
+}
+
+.color_picker {
+  display: inline-block;
+}
+
+.select option {
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+select:focus,
+select:hover {
+  outline: none;
+  border: 1px solid #acacac;
+}
+
+.Button_bgcolor {
+  font-size: 19px;
+  padding: 5px 12px;
+  color: #333333;
+  background-color: #eeeeee;
+  border: 1px solid #dddddd;
+  cursor: pointer;
+  border-radius: 10px;
+
+}
+
+.inputColor {
+  border: none;
+  cursor: pointer;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 60px;
+  background-color: transparent;
+  /* height: 50px;
+  width: 50px; */
+}
+
+#Color::-webkit-color-swatch {
+  /* border-radius: 50%; */
+  border: 2px solid #333333;
+  border-radius: 15px;
+}
+
+.color_container {
+  margin: 10px 0 0 0;
+  padding: 20px 0 0 0;
+}

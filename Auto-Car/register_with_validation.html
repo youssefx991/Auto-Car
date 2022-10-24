@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login page</title>
+  <link rel="stylesheet" href="register.css" />
+  <script src="autocar.js"></script>
+
+
+  </script>
+</head>
+
+<body>
+  <div class="regiter-form">
+    <form action="" onsubmit="check()" name="inputRegisterForm">
+      <h1>Register Page</h1>
+      <div class="info">
+        <label>Email</label>
+        <input type="email" name="email" required class="namepass">
+      </div>
+      <div class="info">
+        <label>User Name</label>
+        <input type="text" class="namepass" name="name" required minlength="4" maxlength="20">
+      </div>
+      <div class="info">
+        <label>Password</label>
+        <input id="111" type="password" name="password" class="namepass" required minlength="4" maxlength="20">
+      </div>
+      <div class="info">
+        <label>Confirm Password</label>
+        <input id="222" type="password" name="confirm" class="namepass" required minlength="4" maxlength="20">
+      </div>
+      <a href="#" class="btn submitButton" id="loginButtonId" onclick="validate_register()">
+        Submit
+      </a>
+
+      <a href="login_with_validation.html">login</a>
+    </form>
+  </div>
+</body>
+
+</html>

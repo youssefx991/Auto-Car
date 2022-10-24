@@ -1,0 +1,152 @@
+.images {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  margin: 35px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.types {
+  padding-top: 100px;
+}
+
+.flip-card-inner {
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  text-align: center;
+  transition: transform 1.4s;
+  transform-style: preserve-3d;
+
+}
+
+.images:hover .flip-card-inner {
+  transform: rotateY(180deg);
+  border-radius: 20px;
+}
+
+.flip-card-front,
+.details {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 20px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 20px;
+}
+
+
+.details {
+  background-color: none;
+  background-color: #2980b9;
+  transform: rotateY(180deg);
+  border-radius: 20px;
+  padding-top: 30px;
+}
+
+.details div,
+.details p {
+  color: white;
+  font-size: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7px;
+}
+
+.carname {
+  padding: 0;
+}
+
+.price {
+  padding: 15px 0 0 0;
+}
+
+.modelBoxBtn {
+  background-color: #253e4f;
+  margin-top: 30px;
+  outline: none;
+  border: none;
+  font-size: 22px;
+  color: #fefefe;
+  padding: 10px;
+  border-radius: 15px;
+
+  transition: 0.7s;
+}
+
+.modelBoxBtn:hover {
+  opacity: 0.8;
+  color: rgb(255, 255, 255);
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.4);
+  transform: scale(1.2);
+}
+
+/* modal box */
+
+
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  /* 15% from the top and centered */
+  padding: 10px;
+  border: 1px solid #888;
+  width: 90%;
+  /* Could be more or less, depending on screen size */
+}
+
+.modal-content img {
+  display: inline;
+  width: 25%;
+  height: 25%;
+
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content p {
+  font-size: 20px;
+  padding: 40px 50px;
+  margin: 10px;
+}

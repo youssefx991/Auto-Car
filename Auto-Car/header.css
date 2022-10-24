@@ -1,0 +1,59 @@
+* {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  /* background-image: url("floor-tile.png");
+  background-repeat: repeat; */
+  background-color: #fafafa;
+}
+
+header {
+  background-color: #e9e8e8;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 200px;
+  position: fixed;
+}
+
+.logo {
+  text-decoration: none;
+  color: #3a6cf4;
+  font-weight: 900;
+  font-size: 1.8em;
+}
+
+header nav a {
+  margin: 0 20px;
+  color: #3a6cf4;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 500;
+  font-style: italic;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+header nav a:hover {
+  color: #7ca8ee;
+  border-bottom: 2px solid silver;
+}
+
+.search {
+  font-size: 40px;
+  font-weight: 900;
+  text-align: center;
+  color: #396cf8;
+  margin: 50px 0 50px 600px;
+}
+
+.hide {
+  display: none;
+}

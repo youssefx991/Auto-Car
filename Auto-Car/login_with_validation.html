@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login page</title>
+  <link rel="stylesheet" href="login.css" />
+  <script src="autocar.js"></script>
+  <script>
+    var an = "admin"
+    var ap = "123"
+    localStorage.setItem("user_name Admin", an);
+    localStorage.setItem("user_password Admin", ap);
+    localStorage.setItem("user_codeP Admin" , (an+ap) );
+  </script>
+
+</head>
+
+<body>
+  <div class="login-form">
+    <form action="" name="inputForm">
+      <h1>Login Form</h1>
+      <div class="info">
+        <label>User Name</label>
+        <input type="text" class="namepass" name="name" required minlength="4" maxlength="20">
+      </div>
+      <div class="info">
+        <label>Password</label>
+        <input type="password" class="namepass" name="password" required minlength="4" maxlength="20">
+      </div>
+      <a href="#" class="btn submitButton" id="loginButtonId" onclick="validate()">
+        login
+      </a>
+      <a href="ForgetPassword.html">Forget Password</a>
+      <a href="register_with_validation.html">Register</a>
+    </form>
+  </div>
+</body>
+
+</html>

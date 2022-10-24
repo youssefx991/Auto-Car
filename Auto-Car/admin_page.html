@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="Slideshow.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="admin_page.css">
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script src="autocar.js"></script>
+
+  <script>
+    var an = "admin"
+    var ap = "123"
+    localStorage.setItem("user_name Admin", an);
+    localStorage.setItem("user_password Admin", ap);
+    localStorage.setItem("user_codeP Admin", (an + ap));
+
+    // if(localStorage.getItem("isAdmin") == false){
+    //   alert("isAdmin is false");
+    //   document.getElementById("pagecolor").classList.add("hide");
+    //   document.getElementById("chngclrBtn").classList.add("hide");
+    // }
+
+    function ChangeBGcolor() {
+      var color = document.getElementById("Color").value;
+      document.getElementById("body").style.backgroundColor = color;
+      localStorage.setItem("backround_color", color);
+    }
+
+    function change_color() {
+      var e = document.getElementById("select_id");
+      var value = e.value;
+      var text = e.options[e.selectedIndex].text;
+
+      if (value == "background")
+        ChangeBGcolor();
+
+      else if (value == "header") {
+        var color = document.getElementById("Color").value;
+        document.getElementById("header_id").style.backgroundColor = color;
+        localStorage.setItem("header_color", color);
+      }
+      else if (value == "footer") {
+        var color = document.getElementById("Color").value;
+        document.getElementById("foot").style.backgroundColor = color;
+        localStorage.setItem("footer_color", color);
+      }
+    }
+
+
+    function default_colors() {
+      localStorage.setItem("backround_color", "#ffffff");
+      document.getElementById("body").style.backgroundColor = "#ffffff"
+
+      localStorage.setItem("header_color", "#f0f0f0");
+      document.getElementById("header_id").style.backgroundColor = "#f0f0f0";
+
+      localStorage.setItem("footer_color", "#0559ad");
+      document.getElementById("foot").style.backgroundColor = "#0559ad";
+
+    }
+
+    function set_colors() {
+      document.getElementById("body").style.backgroundColor = localStorage.getItem("backround_color");
+      document.getElementById("header_id").style.backgroundColor = localStorage.getItem("header_color");
+      document.getElementById("foot").style.backgroundColor = localStorage.getItem("footer_color");
+
+
+    }
+    function set_slideshow() {
+      // var ss1 = document.getElementById("image1");
+      var ss2 = document.getElementById("image2");
+      var ss3 = document.getElementById("image3");
+      var ss4 = document.getElementById("image4");
+      // var ss5 = document.getElementById("image5");
+      // ss1.src = localStorage.getItem("slideshow_1");
+      ss2.src = localStorage.getItem("slideshow_2");
+      ss3.src = localStorage.getItem("slideshow_3");
+      ss4.src = localStorage.getItem("slideshow_4");
+      // ss5.src = localStorage.getItem("slideshow_5");
+    }
+
+    // document.getElementById("pagecolor").classList.add("hide");
+    // document.getElementById("chngclrBtn").classList.add("hide");
+
+  </script>
+
+  <title>Auto car</title>
+</head>
+
+<body id="body" onload="set_colors(), set_slideshow()">
+
+
+  <header class="top" id="header_id">
+    <a href="" class="logo">AutOCAR</a>
+    <nav>
+      <a href="header.html"><strong>Home</strong></a>
+      <a href="logout.html"><strong>Logout</strong></a>
+      <a href="#foot"><strong>Contact</strong></a>
+
+
+
+    </nav>
+  </header>
+
+  <fieldset style="margin: 90px 90px 0; padding: 30px 40px 40px;  display: inline-block;">
+    <legend><strong>Colors of the wedsite</strong></legend>
+    <div class="color_picker">
+      <span class="color_container">
+        <button class="Button_bgcolor" onclick="default_colors()"> default colors</button>
+        <input type="color" id="Color" class="inputColor" value="">
+      </span>
+      <button id="change_color_btn" onclick="change_color()" class="Button_bgcolor"> change color</button>
+
+      <select id="select_id" class="select">
+
+        <option value="background" selected="selected">background</option>
+        <option value="header">header</option>
+        <option value="footer">footer</option>
+        <!-- <option value="text">text</option> -->
+
+      </select>
+  </fieldset>
+
+
+  </div>
+
+  <fieldset style="margin-left: 90px; margin-top: 0px; padding: 30px 40px 40px; display: inline-block;">
+    <legend><strong>image slide bar</strong></legend>
+    <div class="slideshow-selector">
+      <select id="slide_select" class="select">
+
+        <option value="2">slide 2</option>
+        <option value="3">slide 3</option>
+        <option value="4">slide 4</option>
+        <!-- <option value="5">slide>5</option> -->
+
+      </select>
+
+      <select id="photo-select" class="select">
+        <option value="aston-martin">aston matrin</option>
+        <option value="audi-rs-e-tron-gt">audi rs e tron gt</option>
+        <option value="maserati-mc20">maserati mc20</option>
+        <option value="cheerful">cheerful</option>
+        <option value="family">family</option>
+        <option value="lazy">lazy</option>
+        <option value="tobi">tobi</option>
+
+
+        <!-- <option value="nio-et5">1</option>
+      <option value="nio-et5">5</option> -->
+      </select>
+      <button id="change_Photo_btn" onclick="changeSlide(), set_slideshow()" class="Button_bgcolor">Change
+        Photo</button>
+
+    </div>
+  </fieldset>
+
+
+  <!-- yousef wagih -->
+  <div class="container" id="slidebar">
+    <!-- Slider main container -->
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><img id="image1" src="images/friends.jpg"></div>
+        <div class="swiper-slide"><img id="image2" src=" "></div>
+        <div class="swiper-slide"><img id="image3" src=" "></div>
+        <div class="swiper-slide"><img id="image4" src=" "></div>
+        <div class="swiper-slide"><img id="image5" src="images/lazy.jpg"></div>
+
+
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+    </div>
+  </div>
+
+
+
+
+
+  <footer id="foot">
+    <div class="header">
+      <div class="carmax-icons">
+
+        <div class="carmax"><span style="font-size: 22px;">AutOCAR</span></span></div>
+        <div class="line">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="icon">
+          <i class="fab fa-facebook-f"></i>
+        </div>
+        <div class="icon">
+          <i class="fab fa-twitter"></i>
+        </div>
+      </div>
+
+      <article>
+        <input type="checkbox" style="display:none ;" id="select">
+
+
+
+        <div class="center">
+          <h6>Your store for 66204:</h6>
+          <h1>Kansas City</h1>
+          <a href="#" class="view">View more store details</a>
+          <p class="details">6801 East Frontage Road
+            Merriam, KS 66204
+          </p>
+          <a href="" class="phone">(913) 384–6697</a>
+          <span>Currently Open</span>
+          <span class="store-status-hours">Today: 12 PM - 7 PM
+          </span>
+          <a href="" class="payment">SEE CARS AT THIS STORE</a>
+          <label for="" class="change">Change your store</label>
+          <div>
+            <input type="text" placeholder="Enter ZIP or State">
+            <label for=""><i class="fas fa-search"></i></label>
+          </div>
+        </div>
+
+
+
+        <label for="select" href="#">
+
+          <i class='fas fa-map-marker-alt' style='font-size:20px;color:white'></i>
+          <p>Kansas City</p>
+          <i class='fas fa-caret-down' style='font-size:10px;color:white'></i>
+        </label>
+        <a href="#">
+          <i class="fa fa-phone"
+            style="font-size: 20px; transform:rotateY(180deg);margin-right: 10px; margin-top: -2px;"></i>
+          <span>(913) 384-6697</span>
+        </a>
+      </article>
+    </div>
+    <hr>
+    <div class="menue">
+      <ul>
+        <li>Shop</li>
+        <li><a href="">Browse By Category</a></li>
+        <li><a href="">View All Inventory</a></li>
+        <li><a href="">Find a Store</a></li>
+      </ul>
+      <ul>
+        <li>Sell/Trade</li>
+        <li><a href="">Get an Online Offer</a></li>
+      </ul>
+      <ul>
+        <li>Finance</li>
+        <li><a href="">How it Works</a></li>
+        <!-- <li><a href="">CarMax Auto Finance</a></li> -->
+
+      </ul>
+      <ul>
+        <li>About</li>
+        <!-- <li><a href="">About CarMax</a></li> -->
+        <li><a href="">Contact Us</a></li>
+        <li><a href="">Social Responsibility</a></li>
+        <!-- <li><a href="">CarMax Foundation</a></li> -->
+        <li><a href="">Media Center</a></li>
+        <li><a href="">Investor Relations</a></li>
+      </ul>
+      <ul>
+        <li>Careers</li>
+        <li><a href="">Search Jobs</a></li>
+      </ul>
+      <ul>
+        <li>More</li>
+        <li><a href="">Service & Repairs</a></li>
+        <li><a href="">FAQ & Support</a></li>
+        <li><a href="">Research Articles</a></li>
+        <!-- <li><a href="">Warranties & MaxCare®</a></li> -->
+      </ul>
+    </div>
+
+    <section>
+      <div class="other"><a href="">Privacy Policy</a></div>
+      <div class="other"><a href="">Do Not Sell My Information</a></div>
+      <div class="other"><a href="">Financial Privacy Policy</a></div>
+      <div class="other"><a href="">Interest-Based Ads</a></div>
+      <div class="other"><a href="">Terms of Use</a></div>
+      <div class="other"><a href="">Responsible Disclosure</a></div>
+      <!-- <div class="other"><a href="">CarMax Recall Policy</a></div> -->
+      <div class="other"><a href="">CA Supply Chain Transparency</a></div>
+      <div class="other"><a href="">Accessibility</a></div>
+      <a href="" class="fedback">Feedback</a>
+    </section>
+    <main>
+      <p>Copyright © 2022 AutoCAR Enterprise Services, LLC</p>
+    </main>
+  </footer>
+  <article style="text-align: center; display: flex;justify-content: center; align-items: center;padding: 20px;">©
+    2022
+    All Rights Reserved By Ain Shams University</article>
+
+
+  <!-- yousef wagih -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      // Optional parameters
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      loop: true,
+
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+</body>
+
+</html>
