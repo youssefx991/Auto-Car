@@ -1,2 +1,2 @@
 # Auto-Car
-Auto-car is a simple website through wich you can find out accurate details about most cars
+Auto-car is a simple website through which you can find out accurate details about most cars.
